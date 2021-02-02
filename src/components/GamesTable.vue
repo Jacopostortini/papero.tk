@@ -3,7 +3,7 @@
     <h1>Games</h1>
     <div class="games-table__games-container">
       <div v-for="(game, index) in games" :key="index" @click="redirect(game.link)">
-        {{game.name}}
+        <h1>{{game.name}}</h1>
         <img :src="game.img">
       </div>
     </div>
@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/global";
 
 .games-table__main-table{
   grid-area: games;
@@ -58,23 +59,36 @@ export default {
     div {
       border: 2px solid white;
       margin: 2%;
-      padding-left: 1%;
-      padding-right: 1%;
-      max-width: 20%;
-      width: fit-content;
-      height: 40%;
+      padding: 2%;
+      width: 120px;
+      height: 120px;
       display: flex;
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.5s;
+      transition: all 0.5s;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
 
       img{
-        height: 50%;
+        position: absolute;
+        height: 100%;
+      }
+
+      @font-face {
+        font-family: "Eutemia";
+        src: url("../Eutemia.ttf") format("truetype");
+      }
+
+      h1{
+        z-index: 10;
+        font-family: "Eutemia", serif;
       }
 
       &:hover{
         background-color: white;
+        transform: scale(1.5);
       }
     }
   }

@@ -20,14 +20,14 @@ export default {
     return {
       interval: null,
       showLoginPopup: false,
-      logged: false
+      logged: true
     }
   },
   mounted() {
     this.interval = setInterval(()=>{
       clearInterval(this.interval);
       this.interval=null;
-    }, 7000);
+    }, 4000);
   },
 
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="user-profile__main-panel">
     <h1>Welcome back <strong>{{username}}</strong></h1>
+    <img :src="logoutImg" @click="logout">
   </div>
 </template>
 
@@ -12,6 +13,21 @@ export default {
       type: String,
       required: true
     }
+  },
+  data(){
+    return {
+      logoutImg: "/logout.png"
+    }
+  },
+  methods: {
+    logout(){
+      this.logoutImg = "/logout.gif";
+      let that = this;
+      let t = setInterval(()=>{
+        that.logoutImg = "/logout.png";
+        clearInterval(t);
+      }, 3000)
+    }
   }
 }
 </script>
@@ -21,6 +37,14 @@ export default {
 .user-profile__main-panel{
   grid-area: user;
   color: white;
-  text-align: right;
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img{
+    height: 70%;
+    margin-right: 2%;
+  }
 }
 </style>
