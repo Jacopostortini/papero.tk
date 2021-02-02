@@ -3,7 +3,10 @@
     <GifContainer/>
     <GamesTable v-if="interval===null"/>
     <UserProfile v-if="interval===null && logged" :username="username" @logout="logout"/>
-    <button class="login-button" v-if="interval===null && !logged" @click="showLoginPopup=true">Login</button>
+    <div class="nologin-panel" v-if="interval===null && !logged">
+      <h1>Welcome</h1>
+      <button class="login-button" @click="showLoginPopup=true">Login</button>
+    </div>
     <LoginPopup v-if="showLoginPopup" @click="showLoginPopup=false" @login="login"/>
   </div>
 </template>
@@ -57,28 +60,61 @@ export default {
   grid-template-rows: 20% 80%;
   grid-template-areas: "logo user" "games games";
 
-  button{
+  .nologin-panel{
     grid-area: user;
-    width: 8vw;
-    height: 8vw;
-    border-radius: 50%;
-    align-self: center;
-    justify-self: end;
-    margin-right: 10%;
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    font-size: 150%;
-    padding: 1%;
-    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    &:hover{
-      background-color: white;
-      color: $theme-color-dark;
+    h1{
+      margin-left: 10%;
     }
 
-    &:focus{
-      outline: none;
+    button{
+      width: 8vw;
+      height: 8vw;
+      border-radius: 50%;
+      align-self: center;
+      justify-self: end;
+      margin-right: 10%;
+      border: 2px solid white;
+      background-color: transparent;
+      color: white;
+      font-size: 2.5vw;
+      padding: 1%;
+      transition: all 0.5s;
+      animation: login-animation 10s infinite;
+
+      &:hover{
+        background-color: white;
+        color: $theme-color-dark;
+        animation-play-state: paused;
+      }
+
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+
+  @keyframes login-animation {
+    0%{
+      transform: rotate(0);
+    }
+    25%{
+      transform: rotate(0);
+    }
+    40%{
+      transform: rotate(360deg);
+    }
+    75%{
+      transform: rotate(360deg);
+    }
+    90%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(0);
     }
   }
 }

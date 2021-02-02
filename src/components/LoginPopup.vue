@@ -69,16 +69,17 @@ export default {
     border-radius: 10px;
     width: 30%;
     height: 80%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-rows: auto 1fr;
     animation: zoom-in 0.5s;
 
     .google-login-button{
       width: 191px;
       height: 46px;
       background-image: url("../assets/btn_google_signin_dark_normal_web.png");
+      justify-self: center;
+      align-self: center;
+      margin-top: 2%;
 
       &:focus{
         background-image: url("../assets/btn_google_signin_dark_focus_web.png");
@@ -100,14 +101,13 @@ export default {
         font-variant: normal;
         color: white;
         text-align: center;
-        font-size: 80%;
+        font-size: 3vh;
         width: 80%;
       }
 
       input{
         border: none;
-        min-height: 50px;
-        font-size: 40px;
+        font-size: 5vh;
         width: 90%;
         text-align: center;
 
@@ -117,12 +117,12 @@ export default {
       }
 
       button{
-        margin: 10%;
+        margin: 2%;
         border: 1px solid white;
         background-color: transparent;
         padding: 1% 2% 1% 2%;
         color: white;
-        font-size: 120%;
+        font-size: 5vh;
         transition: all 0.5s;
 
         &:hover{
