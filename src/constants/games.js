@@ -5,28 +5,15 @@ export default [
         img: "/gameIcons/unseen_icon.jpg"
     },
     {
-        name: "Astro party",
         link: "http://unseen.papero.tk",
-        img: "/gameIcons/unseen_icon.png"
+        img: "/gameIcons/monopoly_icon.png"
     },
     {
-        name: "Monopoly",
         link: "http://unseen.papero.tk",
-        img: "/gameIcons/unseen_icon.png"
+        img: "/gameIcons/bang_icon.jpg"
     },
     {
-        name: "Bang",
         link: "http://unseen.papero.tk",
-        img: "/gameIcons/unseen_icon.png"
-    },
-    {
-        name: "Bang",
-        link: "http://unseen.papero.tk",
-        img: "/gameIcons/unseen_icon.png"
-    },
-    {
-        name: "Bang",
-        link: "http://unseen.papero.tk",
-        img: "/gameIcons/unseen_icon.png"
+        img: "/gameIcons/astroparty_icon.jpeg"
     }
 ]

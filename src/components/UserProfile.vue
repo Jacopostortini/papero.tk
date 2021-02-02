@@ -25,8 +25,9 @@ export default {
       let that = this;
       let t = setInterval(()=>{
         that.logoutImg = "/logout.png";
+        that.$emit("logout");
         clearInterval(t);
-      }, 3000)
+      }, 500)
     }
   }
 }

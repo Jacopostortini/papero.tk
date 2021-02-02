@@ -3,7 +3,6 @@
     <h1>Games</h1>
     <div class="games-table__games-container">
       <div v-for="(game, index) in games" :key="index" @click="redirect(game.link)">
-        <h1>{{game.name}}</h1>
         <img :src="game.img">
       </div>
     </div>
@@ -36,16 +35,13 @@ export default {
 .games-table__main-table{
   grid-area: games;
   justify-self: center;
-  align-self: start;
+  align-self: center;
   width: 100%;
-  height: 90%;
+  max-height: 90%;
   text-align: center;
   display: grid;
   grid-template-rows: 20% 80%;
 
-  h1{
-    margin: 10% 0 0 0;
-  }
 
   .games-table__games-container{
     display: flex;
@@ -60,8 +56,8 @@ export default {
       border: 2px solid white;
       margin: 2%;
       padding: 2%;
-      width: 120px;
-      height: 120px;
+      width: 7vw;
+      height: 7vw;
       display: flex;
       flex-flow: column;
       align-items: center;
@@ -76,18 +72,7 @@ export default {
         height: 100%;
       }
 
-      @font-face {
-        font-family: "Eutemia";
-        src: url("../Eutemia.ttf") format("truetype");
-      }
-
-      h1{
-        z-index: 10;
-        font-family: "Eutemia", serif;
-      }
-
       &:hover{
-        background-color: white;
         transform: scale(1.5);
       }
     }

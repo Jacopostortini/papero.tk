@@ -2,9 +2,9 @@
   <div class="main-panel">
     <GifContainer/>
     <GamesTable v-if="interval===null"/>
-    <UserProfile v-if="interval===null && logged" username="jacopo"/>
+    <UserProfile v-if="interval===null && logged" :username="username" @logout="logout"/>
     <button class="login-button" v-if="interval===null && !logged" @click="showLoginPopup=true">Login</button>
-    <LoginPopup v-if="showLoginPopup" @click="showLoginPopup=false"/>
+    <LoginPopup v-if="showLoginPopup" @click="showLoginPopup=false" @login="login"/>
   </div>
 </template>
 
@@ -20,14 +20,27 @@ export default {
     return {
       interval: null,
       showLoginPopup: false,
-      logged: true
+      username: null,
+      logged: false
+    }
+  },
+  methods: {
+    logout(){
+      this.logged = false;
+    },
+    login(username){
+      this.logged = true;
+      this.username = username;
     }
   },
   mounted() {
-    this.interval = setInterval(()=>{
-      clearInterval(this.interval);
-      this.interval=null;
-    }, 4000);
+    if(!sessionStorage.getItem("gifdisplayed")){
+      this.interval = setInterval(()=>{
+        clearInterval(this.interval);
+        this.interval=null;
+        sessionStorage.setItem("gifdisplayed", "true");
+      }, 4000);
+    }
   },
 
 }
@@ -46,16 +59,17 @@ export default {
 
   button{
     grid-area: user;
-    width: fit-content;
-    height: fit-content;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
     align-self: center;
     justify-self: end;
     margin-right: 10%;
-    border: 1px solid white;
+    border: 2px solid white;
     background-color: transparent;
     color: white;
     font-size: 150%;
-    padding: 1% 2% 1% 2%;
+    padding: 1%;
     transition: all 0.5s;
 
     &:hover{

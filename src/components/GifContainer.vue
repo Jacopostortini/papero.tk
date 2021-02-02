@@ -1,5 +1,5 @@
 <template>
-  <div class="logo__main-panel" @click="playAudio">
+  <div class="logo__main-panel" :class="{'animation': !gifDisplayed}" @click="playAudio">
     <img src="../assets/logo.gif" ref="logo_gif_image">
   </div>
 </template>
@@ -9,7 +9,8 @@ export default {
   name: "GifContainer",
   data(){
     return {
-      soundPlayer: null
+      soundPlayer: null,
+      gifDisplayed: sessionStorage.getItem("gifdisplayed") !== null
     }
   },
   methods: {
@@ -30,10 +31,13 @@ export default {
 
 <style lang="scss" scoped>
 
+.animation{
+  animation: gif-loading 4s;
+}
+
 .logo__main-panel{
   grid-area: logo;
   height: fit-content;
-  animation: gif-loading 4s;
   width: 100%;
 
   img{

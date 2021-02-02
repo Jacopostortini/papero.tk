@@ -1,11 +1,11 @@
 <template>
   <div class="login-popup__main-panel">
     <div class="buttons-container" @click.stop="">
-      <div class="google-login-button"/>
+      <div class="google-login-button" @click="redirectToLogin"/>
       <div>
         <form class="temporary-account-form" @submit.prevent="playAsGuest">
           <h4>or create a temporary user choosing a username</h4>
-          <input>
+          <input v-model="username">
           <h4 v-if="showWarning">Attention! If you create a temporary user your data could be lost and you won't be able to login from a different device. If you are sure to proceed click <u>play as guest</u> again.</h4>
           <button>Play as guest</button>
         </form>
@@ -20,17 +20,21 @@ export default {
   name: "LoginPopup",
   data(){
     return {
-      showWarning: false
+      showWarning: false,
+      username: null
     }
   },
   methods: {
     playAsGuest(){
       if(this.showWarning){
-        //login
+        this.$emit("login", this.username)
         this.$emit("click");
       } else {
         this.showWarning = true;
       }
+    },
+    redirectToLogin(){
+      window.location.href = "/login";
     }
   }
 }
@@ -51,6 +55,15 @@ export default {
   align-items: center;
   justify-content: center;
 
+  @keyframes zoom-in {
+    0% {
+       transform: scale(0) rotate(1000deg);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
   .buttons-container{
     background: linear-gradient(45deg, $theme-color-dark, $theme-color-light);
     border-radius: 10px;
@@ -60,6 +73,7 @@ export default {
     flex-flow: column;
     align-items: center;
     justify-content: space-evenly;
+    animation: zoom-in 0.5s;
 
     .google-login-button{
       width: 191px;
