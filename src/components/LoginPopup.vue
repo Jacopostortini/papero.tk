@@ -34,7 +34,7 @@ export default {
       }
     },
     redirectToLogin(){
-      window.location.href = "http://unseen.papero.tk/auth/google";
+      window.location = "http://unseen.papero.tk/auth/google";
     }
   }
 }
