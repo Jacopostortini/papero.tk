@@ -34,7 +34,7 @@ export default {
       }
     },
     redirectToLogin(){
-      window.location.href = "/login";
+      window.location.href = "/auth/login";
     }
   }
 }
