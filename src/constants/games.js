@@ -1,19 +1,19 @@
 export default [
     {
         name: "Unseen",
-        link: "http://unseen.papero.tk",
+        url: "/unseen",
         img: "/gameIcons/unseen_icon.jpg"
     },
     {
-        link: "http://unseen.papero.tk",
+        link: "/monopoly",
         img: "/gameIcons/monopoly_icon.png"
     },
     {
-        link: "http://unseen.papero.tk",
+        link: "/bang",
         img: "/gameIcons/bang_icon.jpg"
     },
     {
-        link: "http://unseen.papero.tk",
+        link: "/astroparty",
         img: "/gameIcons/astroparty_icon.jpeg"
     }
 ]

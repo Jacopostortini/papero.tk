@@ -2,7 +2,7 @@
   <div class="games-table__main-table">
     <h1>Games</h1>
     <div class="games-table__games-container">
-      <div v-for="(game, index) in games" :key="index" @click="redirect(game.link)">
+      <div v-for="(game, index) in games" :key="index" @click="redirect(game.url)">
         <img :src="game.img">
       </div>
     </div>
@@ -22,8 +22,8 @@ export default {
     }
   },
   methods: {
-    redirect(link){
-      window.location = link;
+    redirect(url){
+      window.location.pathname = url;
     }
   }
 }
