@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import {useRouter} from "vue-router";
 
 export default {
   name: "LoginPopup",
@@ -24,7 +23,6 @@ export default {
     return {
       showWarning: false,
       username: null,
-      router: useRouter()
     }
   },
   methods: {
@@ -37,7 +35,7 @@ export default {
       }
     },
     redirectToLogin(){
-      this.router.push("/auth/google");
+      window.location.pathname = "/auth/google";
     }
   }
 }
