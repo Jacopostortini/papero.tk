@@ -16,12 +16,12 @@ export default {
   },
   data(){
     return {
-      logoutImg: "/logout.png"
+      logoutImg: require("@/assets/logout.png")
     }
   },
   methods: {
     logout(){
-      this.logoutImg = "/logout.gif";
+      this.logoutImg = require("@/assets/logout.gif");
       let that = this;
       let t = setInterval(()=>{
         that.logoutImg = "/logout.png";

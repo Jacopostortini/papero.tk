@@ -20,7 +20,7 @@ export default {
   },
   mounted() {
     this.soundPlayer = document.createElement("audio");
-    this.soundPlayer.src = "/easter-egg.wav";
+    this.soundPlayer.src = require("@/assets/easter-egg.wav");
     this.soundPlayer.setAttribute("preload", "auto");
     this.soundPlayer.setAttribute("controls", "none");
     this.soundPlayer.style.display = "none";

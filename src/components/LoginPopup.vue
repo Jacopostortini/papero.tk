@@ -77,17 +77,17 @@ export default {
     .google-login-button{
       width: 191px;
       height: 46px;
-      background-image: url("../assets/btn_google_signin_dark_normal_web.png");
+      background-image: url("../assets/googleLoginButtons/btn_google_signin_dark_normal_web.png");
       justify-self: center;
       align-self: center;
       margin-top: 2%;
 
       &:focus{
-        background-image: url("../assets/btn_google_signin_dark_focus_web.png");
+        background-image: url("../assets/googleLoginButtons/btn_google_signin_dark_focus_web.png");
       }
 
       &:active{
-        background-image: url("../assets/btn_google_signin_dark_pressed_web.png");
+        background-image: url("../assets/googleLoginButtons/btn_google_signin_dark_pressed_web.png");
       }
     }
 
