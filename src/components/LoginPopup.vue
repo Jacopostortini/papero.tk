@@ -16,12 +16,15 @@
 </template>
 
 <script>
+import {useRouter} from "vue-router";
+
 export default {
   name: "LoginPopup",
   data(){
     return {
       showWarning: false,
-      username: null
+      username: null,
+      router: useRouter()
     }
   },
   methods: {
@@ -34,7 +37,7 @@ export default {
       }
     },
     redirectToLogin(){
-      window.location = "http://unseen.papero.tk/auth/google";
+      this.router.push("/auth/google");
     }
   }
 }
