@@ -35,6 +35,7 @@ export default {
       }
     },
     redirectToLogin(){
+      window.location.search = "from_location="+window.location;
       window.location.pathname = "/auth/google";
     }
   }
