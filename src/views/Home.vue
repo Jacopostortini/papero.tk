@@ -50,7 +50,6 @@ export default {
     axios
         .get("http://papero.tk/user/get_info")
         .then((response)=>{
-          console.log(response);
           if(response.data){
             this.logged = true;
             this.username = response.data.username;
