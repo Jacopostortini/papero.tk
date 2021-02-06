@@ -1,5 +1,5 @@
 $theme-color-dark: #2a2c34;
-$theme-color-light: #425458;
+$theme-color-light: #64949a;
 $anti-theme-color: #ffffff;
 
 html{
@@ -10,13 +10,16 @@ html{
 
 body{
   margin: 1%;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-variant: small-caps;
-  font-size: 150%;
   width: 98%;
   height: 98%;
-  color: white;
+}
+
+h1{
+  font-variant: small-caps;
+  margin: 0;
+  font-weight: normal;
+  font-size: 6vw;
+  line-height: 6vw;
 }
 
 

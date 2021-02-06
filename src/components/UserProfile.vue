@@ -1,6 +1,6 @@
 <template>
   <div class="user-profile__main-panel">
-    <h1>Welcome back <strong>{{username}}</strong></h1>
+    <h1>Welcome back <span>{{username}}</span></h1>
     <img :src="logoutImg" @click="logout">
   </div>
 </template>
@@ -42,10 +42,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h1{
-    font-weight: normal;
-  }
 
   img{
     height: 70%;

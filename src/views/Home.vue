@@ -71,7 +71,7 @@ export default {
   height: 100%;
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: auto 1fr;
   grid-template-areas: "logo user" "games games";
 
   .nologin-panel{
@@ -79,10 +79,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    h1{
-      margin-left: 10%;
-    }
 
     button{
       width: 20%;
