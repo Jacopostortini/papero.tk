@@ -47,11 +47,11 @@ export default {
     }
     axios
         .get("http://papero.tk/user/get_info")
-        .then((data)=>{
-          console.log(data);
-          if(data){
+        .then((response)=>{
+          console.log(response);
+          if(response.data){
             this.logged = true;
-            this.username = data.username;
+            this.username = response.data.username;
           } else{
             this.logged = false;
           }
