@@ -24,8 +24,8 @@ export default {
     return {
       interval: null,
       showLoginPopup: false,
-      username: "Jacopo",
-      logged: true,
+      username: null,
+      logged: null,
       googleSignedIn: null
     }
   },
