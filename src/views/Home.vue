@@ -32,6 +32,7 @@ export default {
   methods: {
     logout(){
       this.logged = false;
+      axios.get("http://papero.tk/auth/logout");
     },
     login(username){
       this.logged = true;
