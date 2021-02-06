@@ -16,6 +16,7 @@ import GifContainer from "../components/GifContainer";
 import GamesTable from "../components/GamesTable";
 import UserProfile from "../components/UserProfile";
 import LoginPopup from "../components/LoginPopup";
+import axios from "axios";
 export default {
   name: 'Home',
   components: {LoginPopup, UserProfile, GamesTable, GifContainer},
@@ -44,6 +45,16 @@ export default {
         sessionStorage.setItem("gifdisplayed", "true");
       }, 4000);
     }
+    axios
+        .get("http://papero.tk/user/get_info")
+        .then((data)=>{
+          if(data){
+            this.logged = true;
+            this.username = data.username;
+          } else{
+            this.logged = false;
+          }
+        });
   },
 
 }
