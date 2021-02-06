@@ -72,7 +72,7 @@ export default {
     width: 30%;
     height: 80%;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
     animation: zoom-in 0.5s;
 
     .google-login-button{
@@ -93,7 +93,7 @@ export default {
     }
 
     .temporary-account-form{
-
+      align-self: center;
       display: flex;
       flex-flow: column;
       align-items: center;

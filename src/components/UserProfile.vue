@@ -43,6 +43,10 @@ export default {
   justify-content: space-between;
   align-items: center;
 
+  h1{
+    font-weight: normal;
+  }
+
   img{
     height: 70%;
     margin-right: 2%;

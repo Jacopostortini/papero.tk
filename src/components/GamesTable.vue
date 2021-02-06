@@ -1,6 +1,5 @@
 <template>
   <div class="games-table__main-table">
-    <h1>Games</h1>
     <div class="games-table__games-container">
       <div v-for="(game, index) in games" :key="index" @click="redirect(game.url)">
         <img :src="game.img">
@@ -39,9 +38,6 @@ export default {
   width: 100%;
   max-height: 90%;
   text-align: center;
-  display: grid;
-  grid-template-rows: 20% 80%;
-
 
   .games-table__games-container{
     display: flex;

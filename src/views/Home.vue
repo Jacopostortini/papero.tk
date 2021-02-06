@@ -1,13 +1,13 @@
 <template>
   <div class="main-panel">
     <GifContainer/>
-    <GamesTable v-if="interval===null"/>
-    <UserProfile v-if="interval===null && logged" :username="username" @logout="logout"/>
+    <UserProfile v-if="interval===null && logged" :username="username" :google-signed-in="googleSignedIn" @logout="logout"/>
     <div class="nologin-panel" v-if="interval===null && !logged">
       <h1>Welcome</h1>
       <button class="login-button" @click="showLoginPopup=true">Login</button>
     </div>
     <LoginPopup v-if="showLoginPopup" @click="showLoginPopup=false" @login="login"/>
+    <GamesTable v-if="interval===null"/>
   </div>
 </template>
 
@@ -24,8 +24,9 @@ export default {
     return {
       interval: null,
       showLoginPopup: false,
-      username: null,
-      logged: false
+      username: "Jacopo",
+      logged: true,
+      googleSignedIn: null
     }
   },
   methods: {
@@ -52,6 +53,7 @@ export default {
           if(response.data){
             this.logged = true;
             this.username = response.data.username;
+            this.googleSignedIn = response.data.google_signed_in;
           } else{
             this.logged = false;
           }
@@ -83,9 +85,8 @@ export default {
     }
 
     button{
-      width: 8vw;
-      height: 8vw;
-      border-radius: 50%;
+      width: 20%;
+      height: 50%;
       align-self: center;
       justify-self: end;
       margin-right: 10%;
@@ -95,7 +96,7 @@ export default {
       font-size: 2.5vw;
       padding: 1%;
       transition: all 0.5s;
-      animation: login-animation 10s infinite;
+      animation: login-animation 2s infinite linear;
 
       &:hover{
         background-color: white;
@@ -110,24 +111,13 @@ export default {
   }
 
   @keyframes login-animation {
-    0%{
-      transform: rotate(0);
-    }
-    25%{
-      transform: rotate(0);
-    }
-    40%{
-      transform: rotate(360deg);
-    }
-    75%{
-      transform: rotate(360deg);
-    }
-    90%{
-      transform: rotate(0);
-    }
-    100%{
-      transform: rotate(0);
-    }
+    0% {transform: rotate(0deg)}
+    40% {transform: rotate(0deg)}
+    42% {transform: rotate(5deg)}
+    44% {transform: rotate(0deg)}
+    46% {transform: rotate(-5deg)}
+    48% {transform: rotate(0deg)}
+    100% {transform: rotate(0deg)}
   }
 }
 
