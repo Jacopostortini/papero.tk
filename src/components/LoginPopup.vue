@@ -100,10 +100,10 @@ export default {
       justify-content: center;
 
       h4{
-        font-variant: normal;
+        font-weight: normal;
         color: white;
         text-align: center;
-        font-size: 3vh;
+        font-size: 2.5vh;
         width: 80%;
       }
 
