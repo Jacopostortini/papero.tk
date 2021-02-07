@@ -16,7 +16,8 @@ import GifContainer from "../components/GifContainer";
 import GamesTable from "../components/GamesTable";
 import UserProfile from "../components/UserProfile";
 import LoginPopup from "../components/LoginPopup";
-import axios from "axios";
+import axios from "vue-axios";
+import {getLoginInfoUrl, logoutUrl} from "../constants/constants";
 export default {
   name: 'Home',
   components: {LoginPopup, UserProfile, GamesTable, GifContainer},
@@ -32,7 +33,7 @@ export default {
   methods: {
     logout(){
       this.logged = false;
-      axios.get("https://papero.tk/auth/logout");
+      axios.get(logoutUrl);
     },
     login(username){
       this.logged = true;
@@ -48,7 +49,7 @@ export default {
       }, 4000);
     }
     axios
-        .get("https://papero.tk/user/get_info")
+        .get(getLoginInfoUrl)
         .then((response)=>{
           if(response.data){
             this.logged = true;
