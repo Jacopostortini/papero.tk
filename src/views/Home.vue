@@ -16,7 +16,7 @@ import GifContainer from "../components/GifContainer";
 import GamesTable from "../components/GamesTable";
 import UserProfile from "../components/UserProfile";
 import LoginPopup from "../components/LoginPopup";
-import axios from "vue-axios";
+import axios from "axios";
 import {getLoginInfoUrl, logoutUrl} from "../constants/constants";
 export default {
   name: 'Home',
