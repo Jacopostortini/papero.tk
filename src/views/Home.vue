@@ -32,7 +32,7 @@ export default {
   methods: {
     logout(){
       this.logged = false;
-      axios.get("http://papero.tk/auth/logout");
+      axios.get("https://papero.tk/auth/logout");
     },
     login(username){
       this.logged = true;
@@ -48,7 +48,7 @@ export default {
       }, 4000);
     }
     axios
-        .get("http://papero.tk/user/get_info")
+        .get("https://papero.tk/user/get_info")
         .then((response)=>{
           if(response.data){
             this.logged = true;
