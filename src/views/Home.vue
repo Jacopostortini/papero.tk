@@ -4,9 +4,8 @@
     <UserProfile v-if="interval===null && logged" :username="username" :google-signed-in="googleSignedIn" @logout="logout"/>
     <div class="nologin-panel" v-if="interval===null && !logged">
       <h1>Welcome</h1>
-      <button class="login-button" @click="showLoginPopup=true">Login</button>
+      <button class="login-button" @click="login">Login</button>
     </div>
-    <LoginPopup v-if="showLoginPopup" @click="showLoginPopup=false" @login="login"/>
     <GamesTable v-if="interval===null"/>
   </div>
 </template>
@@ -15,12 +14,11 @@
 import GifContainer from "../components/GifContainer";
 import GamesTable from "../components/GamesTable";
 import UserProfile from "../components/UserProfile";
-import LoginPopup from "../components/LoginPopup";
 import axios from "axios";
 import {getLoginInfoUrl, logoutUrl} from "../constants/constants";
 export default {
   name: 'Home',
-  components: {LoginPopup, UserProfile, GamesTable, GifContainer},
+  components: {UserProfile, GamesTable, GifContainer},
   data(){
     return {
       interval: null,
@@ -35,9 +33,9 @@ export default {
       this.logged = false;
       axios.get(logoutUrl);
     },
-    login(username){
-      this.logged = true;
-      this.username = username;
+    login(){
+      let from_location = window.location;
+      window.location.href = '/auth/google?from_location='+from_location;
     }
   },
   mounted() {
