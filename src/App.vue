@@ -3,6 +3,11 @@
 </template>
 
 <style lang="scss">
+html{
+  background-color: orange;
+  background-image: url(./assets/background.png);
+  background-size: 500px auto;
+}
 
 @font-face {
   font-family: "LightFont";

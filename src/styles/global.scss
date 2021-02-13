@@ -5,7 +5,7 @@ $anti-theme-color: #ffffff;
 html{
   width: 100%;
   height: 100%;
-  background:linear-gradient(-45deg, $theme-color-dark, $theme-color-light);
+  overflow: hidden;
 }
 
 body{
