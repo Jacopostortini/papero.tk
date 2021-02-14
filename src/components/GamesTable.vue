@@ -14,10 +14,7 @@ export default {
   name: "GamesTable",
   data(){
     return {
-      games: games,
-      firstGame: 0,
-      secondGame: 1,
-      thirdGame: 2
+      games: games
     }
   },
   methods: {
@@ -32,6 +29,7 @@ export default {
 @import "../styles/global";
 
 .games-table__main-table{
+  animation: bounce 1s;
   grid-area: games;
   justify-self: center;
   align-self: center;
@@ -72,6 +70,17 @@ export default {
         transform: scale(1.5);
       }
     }
+  }
+
+  @keyframes bounce {
+    0%{
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0);
+    }
+
   }
 }
 </style>

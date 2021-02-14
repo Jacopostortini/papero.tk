@@ -3,10 +3,11 @@
 </template>
 
 <style lang="scss">
+
 html{
   background-color: orange;
   background-image: url(./assets/background.png);
-  background-size: 500px auto;
+  background-size: 400px auto;
 }
 
 @font-face {
@@ -20,7 +21,7 @@ html{
 }
 
 #app {
-  font-family: DarkFont, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   color: white;
   width: 100%;
   height: 100%;

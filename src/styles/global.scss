@@ -1,6 +1,5 @@
-$theme-color-dark: #86e970;
-$theme-color-light: #4abf6f;
-$anti-theme-color: #ffffff;
+$theme-color: orange;
+$theme-color-light: orange;
 
 html{
   width: 100%;
@@ -9,7 +8,6 @@ html{
 }
 
 body{
-  margin: 1%;
   width: 98%;
   height: 98%;
 }
@@ -20,6 +18,23 @@ h1{
   font-weight: normal;
   font-size: 4vw;
   line-height: 4vw;
+}
+
+button {
+  color: white;
+  padding: 2% 3% 2% 3%;
+  background: transparent;
+  border: 2px solid white;
+  transition: all 0.5s;
+
+  &:hover{
+    background-color: white;
+    color: $theme-color-light;
+  }
+
+  &:focus{
+    outline: none;
+  }
 }
 
 
