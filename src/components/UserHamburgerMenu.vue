@@ -51,6 +51,8 @@ export default {
     },
     logout(){
       axios.get(logoutUrl);
+      this.username = null;
+      this.logged = false;
     }
   }
 }
