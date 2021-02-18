@@ -1,10 +1,10 @@
 <template>
   <div class="user-hamburger-menu__main-panel" @click.stop="" :class="{'hidden': !show}">
     <div class="user-hamburger-menu__menu">
-      <img class="home-button" src="@/assets/logo.png">
+      <img class="home-button" src="@/assets/logo.png" @click="playAudio">
       <div class="logged-menu" v-if="username">
         <div>
-          <p>Username: <strong>{{username}}</strong></p>
+          <p>Username: <strong>{{decodeURIComponent(username)}}</strong></p>
           <button @click="logout">Logout</button>
         </div>
         <button class="proceed-with-google" v-if="!logged" @click="redirectToGoogle">Activate sync with google</button>
@@ -53,6 +53,15 @@ export default {
       axios.get(logoutUrl);
       this.username = null;
       this.logged = false;
+    },
+    playAudio(){
+      let soundPlayer = document.createElement("audio");
+      soundPlayer.src = require("@/assets/easter-egg.wav");
+      soundPlayer.setAttribute("preload", "auto");
+      soundPlayer.setAttribute("controls", "none");
+      soundPlayer.style.display = "none";
+      document.body.appendChild(soundPlayer);
+      soundPlayer.play();
     }
   }
 }

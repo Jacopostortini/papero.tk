@@ -1,30 +1,12 @@
 <template>
-  <div class="logo__main-panel" @click="playAudio">
+  <div class="logo__main-panel">
     <img src="../assets/logo.gif" ref="logo_gif_image">
   </div>
 </template>
 
 <script>
 export default {
-  name: "Loader",
-  data(){
-    return {
-      soundPlayer: null
-    }
-  },
-  methods: {
-    playAudio(){
-      this.soundPlayer.play();
-    }
-  },
-  mounted() {
-    this.soundPlayer = document.createElement("audio");
-    this.soundPlayer.src = require("@/assets/easter-egg.wav");
-    this.soundPlayer.setAttribute("preload", "auto");
-    this.soundPlayer.setAttribute("controls", "none");
-    this.soundPlayer.style.display = "none";
-    document.body.appendChild(this.soundPlayer);
-  }
+  name: "Loader"
 }
 </script>
 

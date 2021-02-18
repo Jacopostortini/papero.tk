@@ -9,32 +9,19 @@
 
 <script>
 
-import axios from "axios";
-import {getLoginInfoUrl, logoutUrl} from "../constants/constants";
 import Loader from "../components/Loader";
 import Header from "../components/Header";
 import GamesTable from "../components/GamesTable";
 import UserHamburgerMenu from "../components/UserHamburgerMenu";
+import {useRouter} from "vue-router";
 export default {
   name: 'Home',
   components: {UserHamburgerMenu, GamesTable, Header, Loader},
   data(){
     return {
+      router: useRouter(),
       gifDisplaying: null,
-      showLoginPopup: false,
-      username: null,
-      logged: null,
-      googleSignedIn: null
-    }
-  },
-  methods: {
-    logout(){
-      this.logged = false;
-      axios.get(logoutUrl);
-    },
-    login(){
-      let from_location = window.location;
-      window.location.href = '/auth/google?from_location='+from_location;
+      showLoginPopup: false
     }
   },
   mounted() {
@@ -45,17 +32,6 @@ export default {
         sessionStorage.setItem("gifdisplayed", "true");
       }, 4000);
     }
-    axios
-        .get(getLoginInfoUrl)
-        .then((response)=>{
-          if(response.data){
-            this.logged = true;
-            this.username = response.data.username;
-            this.googleSignedIn = response.data.google_signed_in;
-          } else{
-            this.logged = false;
-          }
-        });
   },
 
 }
