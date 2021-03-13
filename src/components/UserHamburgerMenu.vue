@@ -71,38 +71,38 @@ export default {
 @import "../styles/global";
 
 .user-hamburger-menu__main-panel{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: fit-content;
+  width: 25%;
+  @media (max-width: 700px) {
+    width: 70%;
+  }
   height: fit-content;
   display: flex;
+  padding: 2% 2% 10% 2%;
   flex-flow: row;
   transition: all 0.5s;
-  z-index: 200;
+  z-index: 1;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  background-color: $theme-color;
 
   &.hidden{
-    transform: translateX(calc(-25vw - 1px));
+    transform: translateX(-100%);
   }
 
   .user-hamburger-menu__menu{
-    padding-top: 10%;
-    width: 25vw;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
-    background-color: $theme-color;
-    overflow: hidden;
     display: flex;
     flex-flow: column;
     align-items: center;
 
     .home-button{
-      height: 25vh;
+      width: 90%;
     }
 
     .logged-menu{
       margin-top: 10%;
-      height: 20vh;
       display: flex;
       flex-flow: column;
       align-items: center;
@@ -115,16 +115,11 @@ export default {
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
-
-        p{
-          white-space: nowrap;
-        }
       }
     }
 
     .not-logged-menu{
       margin-top: 10%;
-      height: 20vh;
       display: flex;
       flex-flow: column;
       align-items: center;
@@ -137,15 +132,19 @@ export default {
   }
 
   .user-hamburger-menu__icon{
-    margin-top: 15px;
-    margin-left: 15px;
-    width: 5vh;
-    height: 5vh;
+    position: absolute;
+    width: 10%;
+    height: min-content;
+    right: calc(-10% - 20px);
+    top: 20px;
+
     transition: all 0.5s;
+    z-index: 5;
 
     img{
+      float: left;
       width: 100%;
-      height: 100%;
+      height: auto;
     }
 
     &.rotated{

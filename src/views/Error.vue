@@ -1,7 +1,7 @@
 <template>
   <div class="error__main-panel">
     <div class="wrapper">
-      <h1>Oops, it seems like there was an error</h1>
+      <h1>Oops, looks like there was an error</h1>
       <p v-if="fromPath">We were not able to redirect you to <a :href="fromPath">{{fromPath}}</a></p>
       Try:
       <div>

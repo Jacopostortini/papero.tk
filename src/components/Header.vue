@@ -17,10 +17,11 @@ export default {
   animation: fade-in 1s;
   grid-area: header;
   text-align: center;
+  width: 100%;
 
   img{
     padding: 1% 3% 1% 3%;
-    height: 100%;
+    width: 50%;
     background-color: $theme-color;
   }
 
