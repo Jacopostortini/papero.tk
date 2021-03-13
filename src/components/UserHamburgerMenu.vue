@@ -90,7 +90,7 @@ export default {
     width: 25vw;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    background-color: $theme-color-light;
+    background-color: $theme-color;
     overflow: hidden;
     display: flex;
     flex-flow: column;

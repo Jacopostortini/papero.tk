@@ -1,5 +1,4 @@
-$theme-color: orange;
-$theme-color-light: orange;
+$theme-color: #ffa500;
 
 html{
   width: 100%;
@@ -29,7 +28,7 @@ button {
 
   &:hover{
     background-color: white;
-    color: $theme-color-light;
+    color: $theme-color;
   }
 
   &:focus{

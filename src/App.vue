@@ -3,9 +3,10 @@
 </template>
 
 <style lang="scss">
+@import "styles/global";
 
 html{
-  background-color: orange;
+  background-color: $theme-color;
   background-image: url(./assets/background.png);
   background-size: 400px auto;
 }
