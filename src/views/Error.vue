@@ -10,7 +10,7 @@
           <li v-else>Go to our <a href="/">Home</a>, maybe you shouldn't be here</li>
           <li>Checking your internet connection</li>
           <li>Restarting your browser</li>
-          <li>If the problem persists send an email at <a>info@papero.tk</a></li>
+          <li>If the problem persists send an email at <a>info@papero.me</a></li>
         </ul>
       </div>
     </div>
