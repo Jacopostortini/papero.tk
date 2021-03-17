@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import {getLoginInfoUrl, logoutUrl} from "../constants/constants";
+import {urls} from "../constants/constants";
 import axios from "axios";
 
 export default {
@@ -36,7 +36,7 @@ export default {
   mounted() {
     window.addEventListener("click", ()=>{this.show=false});
     axios
-      .get(getLoginInfoUrl)
+      .get(urls.getLoginInfoUrl)
       .then((response)=>{
         if(response.data){ //logged in in some way
           this.username = response.data.username;
@@ -50,7 +50,7 @@ export default {
       window.location.href = '/auth/google?from_location='+from_location;
     },
     logout(){
-      axios.get(logoutUrl);
+      axios.get(urls.logoutUrl);
       this.username = null;
       this.logged = false;
     },

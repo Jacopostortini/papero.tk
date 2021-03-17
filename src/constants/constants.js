@@ -1,7 +1,8 @@
-const getLoginInfoUrl = "https://papero.tk/user/get_info";
-const logoutUrl = "https://papero.tk/auth/logout";
-
+const baseUrl = "https://papero.me";
+const urls = {
+    getLoginInfoUrl: baseUrl+"/user/get_info",
+    logoutUrl: baseUrl+"auth/logout"
+}
 export {
-    getLoginInfoUrl,
-    logoutUrl
+    urls
 }
