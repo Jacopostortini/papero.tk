@@ -10,7 +10,10 @@
 
 import Header from "../components/Header";
 import GamesTable from "../components/GamesTable";
-import UserHamburgerMenu from "../components/UserHamburgerMenu";
+import {defineAsyncComponent} from "vue";
+
+const UserHamburgerMenu = defineAsyncComponent(() => import("../components/UserHamburgerMenu" /* webpackChunkName: "userHamburgerMenu" */));
+
 export default {
   name: 'Home',
   components: {UserHamburgerMenu, GamesTable, Header},

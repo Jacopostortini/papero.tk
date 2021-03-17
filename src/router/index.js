@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Error from "../views/Error";
+
+const Home = () => import("../views/Home" /* webpackChunkName: "home" */);
+const Error = () => import("../views/Error" /* webpackChunkName: "error" */);
 
 const routes = [
   {
