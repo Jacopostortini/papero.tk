@@ -21,7 +21,7 @@ export default {
 
   img{
     padding: 1% 3% 1% 3%;
-    width: 50%;
+    width: 80%;
     background-color: $theme-color;
   }
 

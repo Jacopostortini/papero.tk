@@ -1,15 +1,15 @@
 <template>
   <div class="games-table__main-table">
     <div class="games-table__games-container">
-      <div v-for="(game, index) in games" :key="index" @click="redirect(game.url)">
-        <img :src="game.img">
-      </div>
+      <GameOfTable v-for="(game, index) in games" :key="index" :game="game">
+      </GameOfTable>
     </div>
   </div>
 </template>
 
 <script>
 import games from "../constants/games"
+import GameOfTable from "@/components/GameOfTable";
 export default {
   name: "GamesTable",
   data(){
@@ -21,7 +21,8 @@ export default {
     redirect(url){
       window.location.pathname = url;
     }
-  }
+  },
+  components: {GameOfTable}
 }
 </script>
 
@@ -29,17 +30,18 @@ export default {
 @import "../styles/global";
 
 .games-table__main-table{
-  animation: bounce 1s;
+  //background-color: white;
   grid-area: games;
   justify-self: center;
   align-self: center;
   width: 100%;
-  max-height: 90%;
+  max-height: 70%;
+  max-width: 1000px;
   text-align: center;
 
   .games-table__games-container{
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -47,19 +49,23 @@ export default {
     height: 100%;
 
     div {
-      border: 2px solid white;
+      border: 2px solid black;
       margin: 2%;
-      padding: 2%;
-      width: 7vw;
-      height: 7vw;
+      padding: 1%;
+      width: 40vw;
+      min-width: 200px;
+      min-height: 50px;
+      max-width: 500px;
+      max-height: 80px;
+      height: 5vw;
       display: flex;
       flex-flow: column;
       align-items: center;
       justify-content: center;
-      transition: all 0.5s;
-      border-radius: 50%;
       position: relative;
       overflow: hidden;
+      animation: bounce 1s;
+      transition: all 0.5s;
 
       img{
         position: absolute;
@@ -70,17 +76,6 @@ export default {
         transform: scale(1.5);
       }
     }
-  }
-
-  @keyframes bounce {
-    0%{
-      transform: translateY(-100px);
-      opacity: 0;
-    }
-    100%{
-      transform: translateY(0);
-    }
-
   }
 }
 </style>

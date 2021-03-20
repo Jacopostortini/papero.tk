@@ -7,10 +7,9 @@
 
 #app {
   background-color: $theme-color;
-  background-image: url(./assets/background.png);
   background-size: 400px auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: white;
+  color: #ffffff;
   width: 100%;
   height: 100%;
 }

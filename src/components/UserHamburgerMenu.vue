@@ -1,7 +1,7 @@
 <template>
   <div class="user-hamburger-menu__main-panel" @click.stop="" :class="{'hidden': !show}">
     <div class="user-hamburger-menu__menu">
-      <img class="home-button" src="@/assets/logo.png" @click="playAudio">
+
       <div class="logged-menu" v-if="username">
         <div>
           <p>Username: <strong>{{decodeURIComponent(username)}}</strong></p>
@@ -74,11 +74,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25%;
-  @media (max-width: 700px) {
-    width: 70%;
-  }
-  height: fit-content;
+  width:25vw;
   display: flex;
   padding: 2% 2% 10% 2%;
   flex-flow: row;
@@ -107,7 +103,6 @@ export default {
       flex-flow: column;
       align-items: center;
       color: white;
-      width: 100%;
 
       div{
         width: 100%;
