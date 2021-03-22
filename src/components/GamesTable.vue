@@ -37,7 +37,12 @@ export default {
   max-height: 70%;
   margin-top: 5%;
   text-align: center;
-  overflow: scroll;
+
+  @media all and (max-width: 1000px) and (orientation:landscape)
+  {
+    overflow: scroll;
+  }
+
 
 
   .games-table__games-container{
