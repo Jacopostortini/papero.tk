@@ -45,6 +45,8 @@ export default {
 
 
 
+
+
   .games-table__games-container{
     display: flex;
     flex-flow: column;
@@ -64,6 +66,11 @@ export default {
       min-height: 50px;
       max-width: 300px;
       max-height: 50px;
+
+      @media all and (max-width: 500px) and (orientation:portrait)
+      {
+        width: 80vw;
+      }
       height: 5vw;
       display: flex;
       flex-flow: column;
