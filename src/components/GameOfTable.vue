@@ -1,5 +1,5 @@
 <template>
-<div @click="redirectToUrl" class="game_div" v-bind:style="{ 'background-color': game.color }">
+<div @click="redirectToUrl" class="game_div" v-bind:style="{ 'background-color': game.color }" :class="{'not_available': !game.available}">
   <a class="game_name">{{game.name}}</a>
 
 </div>
@@ -22,8 +22,12 @@ name: "GameOfTable",
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/global";
 .game_div{
+  &.not_available{
+    opacity: .4;
+   }
 }
 .game_name{
   color: black;
