@@ -1,5 +1,5 @@
 <template>
-<div @click="$router.push({path: game.url})" class="game_div" v-bind:style="{ 'background-color': game.color }">
+<div @click="redirectToUrl" class="game_div" v-bind:style="{ 'background-color': game.color }">
   <a class="game_name">{{game.name}}</a>
 
 </div>
@@ -13,6 +13,11 @@ name: "GameOfTable",
   },
   props: {
     game: Object
+  },
+  methods: {
+    redirectToUrl() {
+      window.location.href = this.game.url.toString();
+    }
   }
 }
 </script>

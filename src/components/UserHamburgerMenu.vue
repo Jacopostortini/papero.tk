@@ -4,7 +4,7 @@
 
       <div class="logged-menu" v-if="username">
         <div>
-          <p>Username: <strong>{{decodeURIComponent(username)}}</strong></p>
+          <p>Username: <br><strong>{{decodeURIComponent(username)}}</strong></p>
           <button @click="logout">Logout</button>
         </div>
         <button class="proceed-with-google" v-if="!logged" @click="redirectToGoogle">Activate sync with google</button>
@@ -29,8 +29,8 @@ export default {
   data(){
     return{
       show: false,
-      username: null,
-      logged: false
+      username: "Hungry Pigeon",
+      logged: true
     }
   },
   mounted() {
@@ -53,15 +53,6 @@ export default {
       axios.get(urls.logoutUrl);
       this.username = null;
       this.logged = false;
-    },
-    playAudio(){
-      let soundPlayer = document.createElement("audio");
-      soundPlayer.src = require("@/assets/easter-egg.wav");
-      soundPlayer.setAttribute("preload", "auto");
-      soundPlayer.setAttribute("controls", "none");
-      soundPlayer.style.display = "none";
-      document.body.appendChild(soundPlayer);
-      soundPlayer.play();
     }
   }
 }
@@ -75,6 +66,7 @@ export default {
   top: 0;
   left: 0;
   width:25vw;
+  max-width: 180px;
   display: flex;
   padding: 2% 2% 10% 2%;
   flex-flow: row;
@@ -83,22 +75,21 @@ export default {
   border-right: 1px solid white;
   border-bottom: 1px solid white;
   background-color: $theme-color;
-
   &.hidden{
     transform: translateX(-100%);
   }
-
   .user-hamburger-menu__menu{
     display: flex;
     flex-flow: column;
     align-items: center;
-
+    text-align: center;
+    margin: auto;
     .home-button{
       width: 90%;
     }
-
     .logged-menu{
       margin-top: 10%;
+      width: 100%;
       display: flex;
       flex-flow: column;
       align-items: center;
@@ -112,36 +103,30 @@ export default {
         flex-wrap: wrap;
       }
     }
-
     .not-logged-menu{
       margin-top: 10%;
       display: flex;
       flex-flow: column;
       align-items: center;
       color: white;
-
       p{
         margin: 10px;
       }
     }
   }
-
   .user-hamburger-menu__icon{
     position: absolute;
-    width: 10%;
+    width: calc(8% + 10px);
     height: min-content;
     right: calc(-10% - 20px);
     top: 20px;
-
     transition: all 0.5s;
     z-index: 5;
-
     img{
       float: left;
       width: 100%;
       height: auto;
     }
-
     &.rotated{
       transform: rotate(90deg);
     }
