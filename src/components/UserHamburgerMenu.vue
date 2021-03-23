@@ -60,44 +60,49 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/global";
+::-webkit-scrollbar {
+  display: none;
+}
 
 .user-hamburger-menu__main-panel{
+  transition: all 0.5s;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width:calc(25vw + 30px);
-  max-width: 250px;
-  height: 100%;
-  display: flex;
-  padding: 2% 2% 10% 2%;
-  flex-flow: row;
-  transition: all 0.5s;
-  z-index: 1;
-  border-right: 1px solid white;
-  border-bottom: 1px solid white;
+  z-index: 5;
+  width: calc(25% + 100px);
   background-color: #ff7f1f;
   &.hidden{
     transform: translateX(-100%);
   }
   .user-hamburger-menu__menu{
-    display: flex;
-    flex-flow: column;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 20% 60%;
+    grid-template-columns: 100%;
+    grid-template-areas: "logo" "user" "chat";
     align-items: center;
-    text-align: center;
+    justify-items: center;
+    overflow-y: scroll;
+
     .home-button{
-      width: 90%;
+      margin-top: 2%;
+      grid-area: logo;
+      height: 90%;
     }
     .logged-menu{
       margin-top: 10%;
-      display: flex;
-      flex-flow: column;
+      display: grid;
       align-items: center;
+      text-align: center;
       color: white;
       font-size: 20px;
 
       div{
         width: 100%;
-        display: flex;
+        display: grid;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
@@ -105,7 +110,7 @@ export default {
     }
     .not-logged-menu{
       margin-top: 10%;
-      display: flex;
+      display: grid;
       flex-flow: column;
       align-items: center;
       color: white;
