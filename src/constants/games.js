@@ -3,14 +3,12 @@ export default [
         name: "UNSEEN",
         url: "/unseen",
         color: "$theme-color",
-        img: require("@/assets/gameIcons/unseen_icon.jpg"),
         available: true
     },
     {
-        name: "ASTRO",
+        name: "COSMOS",
         url: "/comingsoon",
         color: "$theme-color",
-        img: require("@/assets/gameIcons/astroparty_icon.jpeg"),
         available: false
     },
     {
@@ -21,10 +19,8 @@ export default [
      }/*,
     {
         link: "/monopoly",
-        img: require("@/assets/gameIcons/monopoly_icon.png")
     },
     {
         link: "/bang",
-        img: require("@/assets/gameIcons/bang_icon.jpg")
     }*/
 ]
