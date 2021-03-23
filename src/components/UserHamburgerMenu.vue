@@ -1,7 +1,7 @@
 <template>
   <div class="user-hamburger-menu__main-panel" @click.stop="" :class="{'hidden': !show}">
     <div class="user-hamburger-menu__menu">
-
+      <img class="home-button" src="@/assets/logo.png" alt="Home">
       <div class="logged-menu" v-if="username">
         <div>
           <p>Username: <br><strong>{{decodeURIComponent(username)}}</strong></p>
@@ -65,8 +65,9 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width:25vw;
-  max-width: 180px;
+  width:calc(25vw + 30px);
+  max-width: 250px;
+  height: 100%;
   display: flex;
   padding: 2% 2% 10% 2%;
   flex-flow: row;
@@ -74,7 +75,7 @@ export default {
   z-index: 1;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
-  background-color: $theme-color;
+  background-color: #ff7f1f;
   &.hidden{
     transform: translateX(-100%);
   }
@@ -83,17 +84,16 @@ export default {
     flex-flow: column;
     align-items: center;
     text-align: center;
-    margin: auto;
     .home-button{
       width: 90%;
     }
     .logged-menu{
       margin-top: 10%;
-      width: 100%;
       display: flex;
       flex-flow: column;
       align-items: center;
       color: white;
+      font-size: 20px;
 
       div{
         width: 100%;
@@ -109,6 +109,8 @@ export default {
       flex-flow: column;
       align-items: center;
       color: white;
+
+      font-size: 20px;
       p{
         margin: 10px;
       }
