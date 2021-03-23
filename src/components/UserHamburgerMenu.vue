@@ -7,7 +7,7 @@
           <p>Username: <br><strong>{{decodeURIComponent(username)}}</strong></p>
           <button @click="logout">Logout</button>
         </div>
-        <button class="proceed-with-google" v-if="logged" @click="redirectToGoogle">Activate sync with google</button>
+        <button class="proceed-with-google" v-if="!logged" @click="redirectToGoogle">Activate sync with google</button>
       </div>
       <div class="not-logged-menu" v-else>
         <p>You are currently not logged in</p>
