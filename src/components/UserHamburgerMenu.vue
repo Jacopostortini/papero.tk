@@ -7,7 +7,7 @@
           <p>Username: <br><strong>{{decodeURIComponent(username)}}</strong></p>
           <button @click="logout">Logout</button>
         </div>
-        <button class="proceed-with-google" v-if="!logged" @click="redirectToGoogle">Activate sync with google</button>
+        <button class="proceed-with-google" v-if="logged" @click="redirectToGoogle">Activate sync with google</button>
       </div>
       <div class="not-logged-menu" v-else>
         <p>You are currently not logged in</p>
@@ -80,9 +80,9 @@ export default {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 20% 20% 60%;
+    grid-template-rows: 25% 20%;
     grid-template-columns: 100%;
-    grid-template-areas: "logo" "user" "chat";
+    grid-template-areas: "logo" "user";
     align-items: center;
     justify-items: center;
     overflow-y: scroll;
@@ -93,13 +93,15 @@ export default {
       height: 90%;
     }
     .logged-menu{
-      margin-top: 10%;
+      margin-top: 15%;
       display: grid;
       align-items: center;
       text-align: center;
       color: white;
       font-size: 20px;
-
+      button{
+        margin-top: 10px;
+      }
       div{
         width: 100%;
         display: grid;
