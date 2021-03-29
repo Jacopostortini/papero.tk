@@ -25,9 +25,9 @@ export default {
 
 
 .games-table__main-table{
-  width:80%;
   aspect-ratio: calc(5/3);
-  max-height: 70%;
+  max-width: 90%;
+  max-height: 60%;
   margin: auto;
 
   .games-table__games-container{
@@ -38,6 +38,7 @@ export default {
     @media (max-width: 500px){
       display: flex;
       flex-flow: column;
+      margin-top: 20%;
     }
   }
 

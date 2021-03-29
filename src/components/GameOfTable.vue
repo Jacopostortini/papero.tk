@@ -30,7 +30,7 @@ name: "GameOfTable",
   border: 1px solid $theme-color;
   height: 100%;
   background-color: white;
-  font-size: 1rem;
+  font-size: .8rem;
   text-align: center;
   color: black;
   @media (min-width: 501px) {
