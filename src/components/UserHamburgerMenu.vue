@@ -72,6 +72,7 @@ export default {
   left: 0;
   z-index: 5;
   width: calc(25% + 100px);
+  max-width: 300px;
   background-color: #ff7f1f;
   &.hidden{
     transform: translateX(-100%);

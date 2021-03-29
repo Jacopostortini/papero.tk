@@ -18,11 +18,12 @@ export default {
   grid-area: header;
   text-align: center;
   width: 100%;
+  max-width: 600px;
+  margin: auto;
 
   img{
     padding: 1% 3% 1% 3%;
     width: 80%;
-    background-color: $theme-color;
   }
 
   @keyframes fade-in {

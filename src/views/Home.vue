@@ -1,22 +1,24 @@
 <template>
   <div class="main-panel">
     <UserHamburgerMenu/>
-    <Header/>
+    <Header></Header>
     <GamesTable/>
   </div>
 </template>
 
 <script>
 
-import Header from "../components/Header";
 import GamesTable from "../components/GamesTable";
 import {defineAsyncComponent} from "vue";
+import Header from "@/components/Header";
 
 const UserHamburgerMenu = defineAsyncComponent(() => import("../components/UserHamburgerMenu" /* webpackChunkName: "userHamburgerMenu" */));
 
 export default {
   name: 'Home',
-  components: {UserHamburgerMenu, GamesTable, Header},
+  components: {
+    Header, UserHamburgerMenu, GamesTable,
+  },
 }
 </script>
 
@@ -25,9 +27,11 @@ export default {
 
 .main-panel{
   height: 100%;
-  display: grid;
-  grid-template-rows: 20% 80%;
-  grid-template-areas: "header" "games";
+  width: 100%;
+  background-color: #eaeaea;
+  margin: auto;
+  overflow: scroll;
+
 
   @keyframes login-animation {
     0% {transform: rotate(0deg)}
