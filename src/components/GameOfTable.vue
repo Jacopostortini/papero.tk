@@ -25,27 +25,31 @@ name: "GameOfTable",
 @import "../styles/global";
 .game_button{
   animation: fade-in 1s;
-  margin: 10px;
   border-radius: 20%;
   border: 1px solid $theme-color;
   height: 100%;
   background-color: white;
-  font-size: .8rem;
+  font-size: 1.3rem;
   text-align: center;
   color: black;
-  @media (min-width: 501px) {
+  overflow: hidden;
+  @media (min-width: 701px) {
 
     aspect-ratio: 1;
 
   }
-  @media (max-width: 500px){
+  @media (max-width: 700px){
     width: 90%;
     font-size: 2rem;
     border-radius: 0;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     border: 2px solid $theme-color;
   }
+  @media (max-width: 700px) and (orientation: landscape){
+    margin-top: 1%;
+  }
+
 
   &:hover{
     background-color: $theme-color;
@@ -55,7 +59,7 @@ name: "GameOfTable",
   &.not_available{
     visibility: hidden;
     background-color: $theme-color;
-    @media (max-width: 500px){
+    @media (max-width: 700px){
       display: none;
     }
     &:hover{

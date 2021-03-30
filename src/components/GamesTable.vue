@@ -25,9 +25,7 @@ export default {
 
 
 .games-table__main-table{
-  aspect-ratio: calc(5/3);
-  max-width: 90%;
-  max-height: 60%;
+  max-width: 60%;
   margin: auto;
 
   .games-table__games-container{
@@ -35,10 +33,10 @@ export default {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1fr 1fr 1fr;
-    @media (max-width: 500px){
+    @media (max-width: 700px){
       display: flex;
       flex-flow: column;
-      margin-top: 20%;
+      margin: auto;
     }
   }
 
