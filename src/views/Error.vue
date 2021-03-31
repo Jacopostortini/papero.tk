@@ -39,6 +39,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  color: black;
+  font-size: calc(2vw + 10px);
 
   .wrapper{
     width: 80%;
@@ -47,7 +49,7 @@ export default {
     justify-content: center;
 
     a{
-      color: #6495ed;
+      color: $theme-color;
       text-decoration: underline;
       cursor: pointer;
     }

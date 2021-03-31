@@ -1,11 +1,16 @@
 <template>
   <div class="error__main-panel">
-    <div class="wrapper">
-      <h1>Coming Soon</h1>
-      <p>We're always working to make <strong>papero.me</strong> better.</p>
-      <p>For any questions and suggestions we're here for you at <a>info@papero.me</a></p>
+        <div class="image-wrapper">
+          <img class="home-button" src="@/assets/logoOrange.png" alt="Home">
+        </div>
+        <div class="title-wrapper">
+          <h1>Coming Soon</h1>
+        </div>
+      <div class="text-wrapper">
+        <p>We're always working to make <strong>papero.me</strong> better.</p>
+        <p>For any questions and suggestions we're here for you at <a>info@papero.me</a></p>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -21,24 +26,37 @@ export default {
 .error__main-panel{
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-size:calc(12px + 2vw);
   text-align: center;
+  color: black;
+  .image-wrapper {
+    position: absolute;
+    top: 10px;
+    width: calc(10% + 20px);
+    margin-left: 1%;
+    img {
+      width: 100%;
+    }
+  }
+  .title-wrapper{
+    width: 100%;
+    margin-top: 10px;
+    h1{
+      font-size: calc(4vw + 15px);
+    }
+  }
 
-  .wrapper{
+  .text-wrapper{
     width: 80%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-
+    margin: auto;
+    padding-top: 5%;
+    font-size: calc(2vw + 20px);
     a{
-      color: #000000;
+      color: $theme-color;
       text-decoration: underline;
       cursor: pointer;
     }
-
   }
+
+
 }
 </style>

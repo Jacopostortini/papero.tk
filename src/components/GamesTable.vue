@@ -25,15 +25,18 @@ export default {
 
 
 .games-table__main-table{
-  max-width: 60%;
+  max-width: 90%;
   margin: auto;
 
   .games-table__games-container{
     width: 100%;
+    max-width: 1500px;
+    margin: auto;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 1fr 1fr 1fr;
-    @media (max-width: 700px){
+    @media (max-width: 500px){
+      width: 80%;
       display: flex;
       flex-flow: column;
       margin: auto;
