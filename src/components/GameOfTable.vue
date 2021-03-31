@@ -31,17 +31,22 @@ name: "GameOfTable",
 @import "../styles/global";
 .game_container{
   transition: all .5s;
-  position: relative;
+  position: sticky;
+  top: 120px;
   animation: fade-in 1s;
   border-radius: 20%;
-  width: 100%;
+  width: 90%;
+  margin: 5%;
   height: auto;
   text-align: center;
   color: black;
   overflow: hidden;
 
   @media (max-width: 500px){
-    margin-top: 15px;
+    position: relative !important;
+    top: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
     &:hover{
       transform: scale(1) !important;
     }
@@ -49,7 +54,7 @@ name: "GameOfTable",
 
 
   &:hover{
-    transform: scale(1.5);
+    transform: scale(.8);
   }
 
 

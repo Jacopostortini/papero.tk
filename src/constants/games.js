@@ -29,5 +29,25 @@ export default [
         gridRow: 3,
         color: "$theme-color",
         available: false
-     }
+     },
+     {
+         name: "COMING SOON",
+         url: "/comingsoon",
+         image: require("@/assets/gamesImages/COMINGSOON_background.png"),
+         title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+         gridColumn: 2,
+         gridRow: 4,
+         color: "$theme-color",
+         available: false
+      },
+     {
+         name: "COMING SOON",
+         url: "/comingsoon",
+         image: require("@/assets/gamesImages/COMINGSOON_background.png"),
+         title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+         gridColumn: 4,
+         gridRow: 5,
+         color: "$theme-color",
+         available: false
+      },
 ]
