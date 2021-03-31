@@ -14,6 +14,7 @@ export default [
         url: "/comingsoon",
         image: require("@/assets/gamesImages/COSMOS_background.png"),
         title: require("@/assets/gamesImages/COSMOS_title.png"),
+        preview: require("@/assets/gamesImages/COSMOS_preview.png"),
         gridColumn: 5,
         gridRow: 2,
         color: "$theme-color",

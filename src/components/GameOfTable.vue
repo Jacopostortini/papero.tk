@@ -4,6 +4,7 @@
      :class="{'not_available': !game.available, 'papero_image': game.isPaperoImage}">
   <img class="background_image" :src=game.image>
   <img class="title_image" :src=game.title>
+  <img class="preview_image" :src=game.preview>
 </div>
 </template>
 
@@ -64,11 +65,20 @@ name: "GameOfTable",
 
   .title_image{
     position: absolute;
-    top: 3px;
+    top: 5px;
     left: 0;
     width: 80%;
     margin-left: 10%;
     z-index: 1;
+  }
+
+  .preview_image{
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 60%;
+    margin-left: 20%;
+    z-index: 2;
   }
 
 
@@ -79,6 +89,7 @@ name: "GameOfTable",
   }
 
   &.papero_image{
+    border-radius: 0;
     width: 100% !important;
     margin: 0 !important;
     top: 350px;
