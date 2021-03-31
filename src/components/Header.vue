@@ -20,8 +20,6 @@ export default {
   width: 100%;
   max-width: 600px;
   margin: auto;
-  position: sticky;
-  top: 0;
   @media (max-width: 500px) {
     position: relative;
 

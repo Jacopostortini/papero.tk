@@ -50,4 +50,55 @@ export default [
          color: "$theme-color",
          available: false
       },
+     {
+         name: "0",
+         url: "/",
+         title: require("@/assets/gridPapero/0.png"),
+         gridColumn: 1,
+         gridRow: 6,
+         color: "$theme-color",
+         available: true,
+         isPaperoImage: true
+      },
+     {
+         name: "1",
+         url: "/",
+         title: require("@/assets/gridPapero/1.png"),
+         gridColumn: 2,
+         gridRow: 9,
+         color: "$theme-color",
+         available: true,
+         isPaperoImage: true
+      },
+     {
+         name: "2",
+         url: "/",
+         title: require("@/assets/gridPapero/2.png"),
+         gridColumn: 3,
+         gridRow: 7,
+         color: "$theme-color",
+         available: true,
+         isPaperoImage: true
+      },
+     {
+         name: "3",
+         url: "/",
+         title: require("@/assets/gridPapero/3.png"),
+         gridColumn: 4,
+         gridRow: 11,
+         color: "$theme-color",
+         available: true,
+         isPaperoImage: true
+      },
+     {
+         name: "4",
+         url: "/",
+         title: require("@/assets/gridPapero/4.png"),
+         gridColumn: 5,
+         gridRow: 10,
+         color: "$theme-color",
+         available: true,
+         isPaperoImage: true
+      },
+
 ]

@@ -1,7 +1,7 @@
 <template>
   <div class="error__main-panel">
         <div class="image-wrapper">
-          <img class="home-button" src="@/assets/logoOrange.png" alt="Home">
+          <img class="home-button" src="@/assets/logoOrange.png" alt="Home"  @click="redirectToHome">
         </div>
         <div class="title-wrapper">
           <h1>Coming Soon</h1>
@@ -17,6 +17,11 @@
 
 export default {
   name: "ComingSoon",
+  methods: {
+    redirectToHome() {
+      window.location.href = "/"
+    }
+  }
 }
 </script>
 

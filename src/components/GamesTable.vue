@@ -33,7 +33,7 @@ export default {
     margin: auto;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(15, 1fr);
     @media (max-width: 500px){
       width: 80%;
       display: flex;
@@ -41,9 +41,5 @@ export default {
       margin: auto;
     }
   }
-
-
 }
-
-
 </style>

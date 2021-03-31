@@ -1,7 +1,7 @@
 <template>
 <div @click="redirectToUrl" class="game_container"
      v-bind:style="{'background-color': game.color, 'grid-column': game.gridColumn, 'grid-row': game.gridRow }"
-     :class="{'not_available': !game.available}">
+     :class="{'not_available': !game.available, 'papero_image': game.isPaperoImage}">
   <img class="background_image" :src=game.image>
   <img class="title_image" :src=game.title>
 </div>
@@ -32,11 +32,10 @@ name: "GameOfTable",
 .game_container{
   transition: all .5s;
   position: sticky;
-  top: 120px;
+  top: 40px;
   animation: fade-in 1s;
   border-radius: 20%;
   width: 90%;
-  margin: 5%;
   height: auto;
   text-align: center;
   color: black;
@@ -57,7 +56,6 @@ name: "GameOfTable",
     transform: scale(.8);
   }
 
-
   .background_image{
     width: 100%;
     height: 100%;
@@ -77,6 +75,27 @@ name: "GameOfTable",
   &.not_available{
     .title_image{
       top: 35%;
+    }
+  }
+
+  &.papero_image{
+    width: 100% !important;
+    margin: 0 !important;
+    top: 350px;
+
+    .title_image{
+      width: 100%;
+      top: -25px;
+      margin: 0;
+
+    }
+
+    .background_image{
+      display: none;
+    }
+
+    &:hover{
+      transform: scale(1) !important;
     }
   }
 }
