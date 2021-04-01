@@ -74,6 +74,7 @@ export default {
   width: calc(25% + 100px);
   max-width: 300px;
   background-color: #ff7f1f;
+  text-align: center;
   &.hidden{
     transform: translateX(-100%);
   }
@@ -141,5 +142,10 @@ export default {
       transform: rotate(90deg);
     }
   }
+}
+
+.proceed-with-google{
+  width: 60%;
+  margin-left: 20%;
 }
 </style>

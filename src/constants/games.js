@@ -4,6 +4,7 @@ export default [
         url: "/unseen",
         image: require("@/assets/gamesImages/UNSEEN_background.png"),
         title: require("@/assets/gamesImages/UNSEEN_title.png"),
+        preview: require("@/assets/gamesImages/UNSEEN_preview.png"),
         gridColumn: 1,
         gridRow: 1,
         color: "$theme-color",
