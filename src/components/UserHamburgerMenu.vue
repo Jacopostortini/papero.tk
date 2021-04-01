@@ -67,7 +67,7 @@ export default {
 .user-hamburger-menu__main-panel{
   transition: all 0.5s;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 5;
