@@ -29,8 +29,8 @@ export default {
   data(){
     return{
       show: false,
-      username: "Hungry Pigeon",
-      logged: true
+      username: null,
+      logged: false
     }
   },
   mounted() {

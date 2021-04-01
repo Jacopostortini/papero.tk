@@ -1,5 +1,5 @@
 <template>
-<div @click="redirectToUrl" class="game_container"
+<div class="game_container"
      v-bind:style="{'background-color': game.color, 'grid-column': game.gridColumn, 'grid-row': game.gridRow }"
      :class="{'not_available': !game.available, 'papero_image': game.isPaperoImage}">
   <img class="background_image" :src=game.image>
@@ -92,11 +92,11 @@ name: "GameOfTable",
     border-radius: 0;
     width: 100% !important;
     margin: 0 !important;
-    top: 350px;
+    top: calc(min(27vw, 350px));
 
     .title_image{
       width: 100%;
-      top: -25px;
+      top: -15px;
       margin: 0;
 
     }
