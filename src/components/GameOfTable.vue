@@ -1,5 +1,5 @@
 <template>
-<div class="game_container"
+<div @click="redirectToUrl" class="game_container"
      v-bind:style="{'background-color': game.color, 'grid-column': game.gridColumn, 'grid-row': game.gridRow }"
      :class="{'not_available': !game.available, 'papero_image': game.isPaperoImage}">
   <img class="background_image" :src=game.image>
