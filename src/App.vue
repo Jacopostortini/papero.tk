@@ -10,7 +10,7 @@
 }
 #app {
   background-size: 400px auto;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Comic Sans MS",serif;
   color: #ffffff;
   width: 100%;
   height: 100%;

@@ -21,9 +21,6 @@ name: "GameOfTable",
     redirectToUrl() {
       window.location.href = this.game.url.toString();
     }
-  },
-  mounted() {
-    console.log(this.game.image)
   }
 }
 </script>
@@ -96,7 +93,7 @@ name: "GameOfTable",
 
     .title_image{
       width: 100%;
-      top: -15px;
+      top: 0;
       margin: 0;
 
     }
