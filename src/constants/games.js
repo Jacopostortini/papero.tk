@@ -12,7 +12,7 @@ export default [
     },
     {
         name: "COSMOS",
-        url: "/comingsoon",
+        url: "/cosmos",
         image: require("@/assets/gamesImages/COSMOS_background.png"),
         title: require("@/assets/gamesImages/COSMOS_title.png"),
         preview: require("@/assets/gamesImages/COSMOS_preview.png"),
