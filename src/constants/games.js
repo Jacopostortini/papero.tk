@@ -23,14 +23,16 @@ export default [
      },
 
     {
-        name: "COMING SOON",
+        name: "MOVEAMAZE",
         url: "/comingsoon",
-        image: require("@/assets/gamesImages/COMINGSOON_background.png"),
-        title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+        image: require("@/assets/gamesImages/MOVEAMAZE_background.png"),
+        title: require("@/assets/gamesImages/MOVEAMAZE_title.png"),
+        preview: require("@/assets/gamesImages/MOVEAMAZE_preview.png"),
+
         gridColumn: 3,
         gridRow: 3,
         color: "$theme-color",
-        available: false
+        available: true
      },
      {
          name: "COMING SOON",
