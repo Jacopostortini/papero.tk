@@ -1,9 +1,11 @@
 <template>
   <div class="main-panel">
-    <UserHamburgerMenu/>
+    <UserHamburgerMenu :show="showHamburgerMenu"
+                       :src="require('@/assets/hamburger_icon.png')"
+                       @toggle-show="showHamburgerMenu=$event"/>
     <Header></Header>
     <GamesTable/>
-  </div>
+     </div>
 </template>
 
 <script>
@@ -17,7 +19,12 @@ const UserHamburgerMenu = defineAsyncComponent(() => import("../components/UserH
 export default {
   name: 'Home',
   components: {
-    Header, UserHamburgerMenu, GamesTable,
+    Header, UserHamburgerMenu, GamesTable
+  },
+  data() {
+    return {
+      showHamburgerMenu: false,
+    }
   },
 }
 </script>

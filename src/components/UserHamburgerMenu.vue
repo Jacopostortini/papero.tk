@@ -1,21 +1,21 @@
 <template>
   <div class="user-hamburger-menu__main-panel" @click.stop="" :class="{'hidden': !show}">
+    <div class="user-hamburger-menu__icon" @click="toggleMenu" :class="{'rotated': show}">
+      <img :src="src" alt="menu">
+    </div>
     <div class="user-hamburger-menu__menu">
-      <img class="home-button" src="@/assets/logo.png" alt="Home">
-      <div class="logged-menu" v-if="username">
+      <img class="home-button" src="@/assets/logo.png" @click="redirectToHome" alt="Home">
+      <div class="user-menu" v-if="username">
         <div>
-          <p>Username: <br><strong>{{decodeURIComponent(username)}}</strong></p>
+          <p>Username: <strong>{{decodeURIComponent(username)}}</strong></p>
           <button @click="logout">Logout</button>
         </div>
         <button class="proceed-with-google" v-if="!logged" @click="redirectToGoogle">Activate sync with google</button>
       </div>
-      <div class="not-logged-menu" v-else>
+      <div class="user-menu" v-else>
         <p>You are currently not logged in</p>
         <button class="proceed-with-google" @click="redirectToGoogle">Sign in now with google</button>
       </div>
-    </div>
-    <div class="user-hamburger-menu__icon" @click="show=!show" :class="{'rotated': show}">
-      <img src="@/assets/hamburger_icon.png">
     </div>
   </div>
 </template>
@@ -26,126 +26,120 @@ import axios from "axios";
 
 export default {
   name: "UserHamburgerMenu",
-  data(){
-    return{
-      show: false,
-      username: null,
-      logged: false
+  props: {
+    src: {
+      required: true
+    },
+    show: Boolean
+  },
+  computed: {
+    logged: function () {
+      return this.$store.state.logged;
+    },
+    username: function () {
+      return this.$store.state.username;
     }
   },
   mounted() {
-    window.addEventListener("click", ()=>{this.show=false});
-    axios
-      .get(urls.getLoginInfoUrl)
-      .then((response)=>{
-        if(response.data){ //logged in in some way
-          this.username = response.data.username;
-          this.logged = response.data.google_signed_in;
-        }
-      });
+    window.addEventListener("click", ()=>{this.$emit("toggle-show", false)});
   },
   methods: {
+    toggleMenu(){
+      this.$emit("toggle-show", !this.show);
+    },
+    redirectToHome(){
+      window.location.href = "/";
+    },
     redirectToGoogle(){
       let from_location = window.location;
       window.location.href = '/auth/google?from_location='+from_location;
     },
     logout(){
       axios.get(urls.logoutUrl);
-      this.username = null;
-      this.logged = false;
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/global";
-::-webkit-scrollbar {
-  display: none;
-}
-
+@import "../styles/global.scss";
 .user-hamburger-menu__main-panel{
   transition: all 0.5s;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
-  width: calc(25% + 100px);
-  max-width: 300px;
-  background-color: #ff7f1f;
-  text-align: center;
+  width: 25%;
+  @media (max-width: 500px) {
+    width: 70% !important;
+  }
+  @media (max-width: 700px) {
+    width: 40%;
+  }
+
   &.hidden{
     transform: translateX(-100%);
   }
+  background: $theme-color;
+
   .user-hamburger-menu__menu{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 25% 20%;
-    grid-template-columns: 100%;
-    grid-template-areas: "logo" "user";
+    grid-template-rows: 20% 20% 60%;
+    grid-template-columns: auto;
+    grid-template-areas: "logo" "user" "chat";
     align-items: center;
     justify-items: center;
     overflow-y: scroll;
 
     .home-button{
-      margin-top: 2%;
+      margin-top: 4%;
       grid-area: logo;
-      height: 90%;
+      height: 100%;
     }
-    .logged-menu{
-      margin-top: 15%;
-      display: grid;
-      align-items: center;
+
+    .user-menu{
+      align-self: start;
+      margin: 5%;
       text-align: center;
       color: white;
-      font-size: 20px;
-      button{
-        margin-top: 10px;
-      }
-      div{
-        width: 100%;
-        display: grid;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-    }
-    .not-logged-menu{
-      margin-top: 10%;
-      display: grid;
-      flex-flow: column;
-      align-items: center;
-      color: white;
+      grid-area: user;
 
-      font-size: 20px;
       p{
+        font-size: 200%;
+      }
+
+      button{
+        font-size: 150%;
         margin: 10px;
+      }
+      button:hover{
+        background: $theme-color;
       }
     }
   }
+
   .user-hamburger-menu__icon{
     position: absolute;
-    width: calc(8% + 10px);
+    width: 10%;
     height: min-content;
     right: calc(-10% - 20px);
     top: 20px;
+
     transition: all 0.5s;
     z-index: 5;
+
     img{
       float: left;
       width: 100%;
       height: auto;
     }
-    &.rotated{
+
+    &.rotated {
       transform: rotate(90deg);
     }
   }
-}
-
-.proceed-with-google{
-  width: 60%;
-  margin-left: 20%;
 }
 </style>
