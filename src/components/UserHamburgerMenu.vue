@@ -115,9 +115,6 @@ export default {
         font-size: 150%;
         margin: 10px;
       }
-      button:hover{
-        background: $theme-color;
-      }
     }
   }
 

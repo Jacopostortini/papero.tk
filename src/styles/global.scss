@@ -21,21 +21,4 @@ body{
   }
 }
 
-button {
-  color: white;
-  padding: 2% 3% 2% 3%;
-  background: transparent;
-  border: 2px solid white;
-  transition: all 0.5s;
-
-  &:hover{
-    background-color: white;
-    color: $theme-color;
-  }
-
-  &:focus{
-    outline: none;
-  }
-}
-
 
