@@ -13,7 +13,9 @@
 import GamesTable from "../components/GamesTable";
 import {defineAsyncComponent} from "vue";
 import Header from "@/components/Header";
-
+import axios from "axios";
+import {urls} from "@/constants/constants";
+import store from "../store/index";
 const UserHamburgerMenu = defineAsyncComponent(() => import("../components/UserHamburgerMenu" /* webpackChunkName: "userHamburgerMenu" */));
 
 export default {
@@ -26,6 +28,36 @@ export default {
       showHamburgerMenu: false,
     }
   },
+  beforeRouteEnter(to, from, next){
+    const createLocalAccount = () => {
+      axios
+          .get(urls.createLocalAccountUrl)
+          .then((response) => {
+            store.dispatch("setLogged", false);
+            store.dispatch("setUsername", response.data.username);
+            next();
+          })
+          .catch(() => {
+            location.href = location.origin + "/error?from=" + location.pathname;
+          });
+    }
+    if (store.state.logged === -1 || store.state.username === "") {
+      axios.get(urls.getLoginInfoUrl)
+          .then(response => {
+            if (!response.data) createLocalAccount();
+            else {
+              store.dispatch("setLogged", response.data.google_signed_in);
+              store.dispatch("setUsername", response.data.username);
+              next();
+            }
+          })
+          .catch(() => {
+            location.href = location.origin + "/error?from=" + location.pathname;
+          });
+    } else if(store.state.username === null && store.state.logged === false){
+      createLocalAccount();
+    } else next();
+  }
 }
 </script>
 
