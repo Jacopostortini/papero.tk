@@ -95,7 +95,7 @@ export default {
     overflow-y: scroll;
 
     .home-button{
-      margin-top: 4%;
+      margin-top: 2%;
       grid-area: logo;
       height: 100%;
     }
