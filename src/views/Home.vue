@@ -29,6 +29,7 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next){
+    next()
     const createLocalAccount = () => {
       axios
           .get(urls.createLocalAccountUrl)
