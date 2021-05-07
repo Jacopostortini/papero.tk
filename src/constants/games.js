@@ -26,8 +26,8 @@ export default [
         name: "MOVEAMAZE",
         url: "/comingsoon",
         image: require("@/assets/gamesImages/COMINGSOON_background.png"),
-        title: require("@/assets/gamesImages/MOVEAMAZE_title.png"),
-        preview: require("@/assets/gamesImages/COMINGSOON_title.png"),
+        title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+        preview: require("@/assets/gamesImages/MOVEAMAZE_preview.png"),
 
         gridColumn: 3,
         gridRow: 3,
