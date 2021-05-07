@@ -25,7 +25,7 @@ export default [
     {
         name: "MOVEAMAZE",
         url: "/comingsoon",
-        image: require("@/assets/gamesImages/MOVEAMAZE_background.png"),
+        image: require("@/assets/gamesImages/COMINGSOON_background.png"),
         title: require("@/assets/gamesImages/MOVEAMAZE_title.png"),
         preview: require("@/assets/gamesImages/MOVEAMAZE_preview.png"),
 
@@ -35,10 +35,10 @@ export default [
         available: true
      },
      {
-         name: "COMING SOON",
-         url: "/comingsoon",
+         name: "DUCKTAN",
+         url: "/ducktan",
          image: require("@/assets/gamesImages/COMINGSOON_background.png"),
-         title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+         title: require("@/assets/gamesImages/DUCKTAN_title.png"),
          gridColumn: 2,
          gridRow: 4,
          color: "$theme-color",
