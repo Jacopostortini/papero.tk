@@ -23,6 +23,7 @@
 <script>
 import {urls} from "../constants/constants";
 import axios from "axios";
+import store from "../store/index";
 
 export default {
   name: "UserHamburgerMenu",
@@ -54,8 +55,8 @@ export default {
     },
     logout(){
       axios.get(urls.logoutUrl);
-      this.$store.dispatch("setLogged", false);
-      this.$store.dispatch("setUsername", null);
+      store.dispatch("setLogged", false);
+      store.dispatch("setUsername", null);
       this.logged = false;
       this.username = null;
     }
