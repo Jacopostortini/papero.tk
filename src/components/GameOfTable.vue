@@ -3,8 +3,11 @@
      v-bind:style="{'background-color': game.color, 'grid-column': game.gridColumn, 'grid-row': game.gridRow }"
      :class="{'not_available': !game.available, 'papero_image': game.isPaperoImage}">
   <img class="background_image" :src=game.image>
-  <img class="title_image" :src=game.title>
+  <img class="title_image" :src=game.title v-if="!(game.name === 'COMING SOON')">
   <img class="preview_image" :src=game.preview>
+  <div loop autoplay v-if="game.name === 'COMING SOON'" class="coming_soon_video">
+    <img src="@/assets/gamesImages/COMINGSOON_video.gif" type="video/gif">
+  </div>
 </div>
 </template>
 
@@ -104,6 +107,17 @@ name: "GameOfTable",
 
     &:hover{
       transform: scale(1) !important;
+    }
+  }
+  .coming_soon_video{
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    margin: 0;
+    img{
+      width: 80%;
+      margin: auto;
     }
   }
 }
