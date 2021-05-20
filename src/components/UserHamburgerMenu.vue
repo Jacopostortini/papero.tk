@@ -32,12 +32,10 @@ export default {
     },
     show: Boolean
   },
-  computed: {
-    logged: function () {
-      return this.$store.state.logged;
-    },
-    username: function () {
-      return this.$store.state.username;
+  data(){
+    return {
+      logged: this.$store.state.logged,
+      username: this.$store.state.username
     }
   },
   mounted() {
@@ -56,6 +54,10 @@ export default {
     },
     logout(){
       axios.get(urls.logoutUrl);
+      this.$store.dispatch("setLogged", false);
+      this.$store.dispatch("setUsername", null);
+      this.logged = false;
+      this.username = null;
     }
   }
 }
