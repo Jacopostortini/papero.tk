@@ -27,7 +27,7 @@ export default [
         url: "/comingsoon",
         image: require("@/assets/gamesImages/COMINGSOON_background.png"),
         title: require("@/assets/gamesImages/MOVEAMAZE_title.png"),
-        preview: require("@/assets/gamesImages/COMINGSOON_title.png"),
+        preview: require("@/assets/gamesImages/COMINGSOON_video.gif"),
 
         gridColumn: 3,
         gridRow: 3,
@@ -40,21 +40,21 @@ export default [
          image: require("@/assets/gamesImages/DUCKTAN_background.png"),
          title: require("@/assets/gamesImages/DUCKTAN_title.png"),
          preview: require("@/assets/gamesImages/DUCKTAN_preview.png"),
-
          gridColumn: 2,
          gridRow: 4,
          color: "$theme-color",
          available: true
       },
      {
-         name: "COMING SOON",
-         url: "/comingsoon",
+         name: "DUBBLOCK",
+         url: "/dubblock",
          image: require("@/assets/gamesImages/COMINGSOON_background.png"),
-         title: require("@/assets/gamesImages/COMINGSOON_title.png"),
+         title: require("@/assets/gamesImages/DUBBLOCK_title.png"),
+         preview: require("@/assets/gamesImages/COMINGSOON_video.gif"),
          gridColumn: 4,
          gridRow: 5,
          color: "$theme-color",
-         available: false
+         available: true
       },
      {
          name: "0",
