@@ -23,6 +23,7 @@
 <script>
 import {urls} from "../constants/constants";
 import axios from "axios";
+import store from "../store/index";
 
 export default {
   name: "UserHamburgerMenu",
@@ -32,12 +33,10 @@ export default {
     },
     show: Boolean
   },
-  computed: {
-    logged: function () {
-      return this.$store.state.logged;
-    },
-    username: function () {
-      return this.$store.state.username;
+  data(){
+    return {
+      logged: this.$store.state.logged,
+      username: this.$store.state.username
     }
   },
   mounted() {
@@ -56,6 +55,10 @@ export default {
     },
     logout(){
       axios.get(urls.logoutUrl);
+      store.dispatch("setLogged", false);
+      store.dispatch("setUsername", null);
+      this.logged = false;
+      this.username = null;
     }
   }
 }

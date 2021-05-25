@@ -29,34 +29,22 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next){
-    //next()
-    const createLocalAccount = () => {
-      axios
-          .get(urls.createLocalAccountUrl)
-          .then((response) => {
-            store.dispatch("setLogged", false);
-            store.dispatch("setUsername", response.data.username);
-            next();
-          })
-          .catch(() => {
-            location.href = location.origin + "/error?from=" + location.pathname;
-          });
-    }
     if (store.state.logged === -1 || store.state.username === "") {
       axios.get(urls.getLoginInfoUrl)
           .then(response => {
-            if (!response.data) createLocalAccount();
-            else {
+            if (response.data) {
               store.dispatch("setLogged", response.data.google_signed_in);
               store.dispatch("setUsername", response.data.username);
+              next();
+            } else {
+              store.dispatch("setLogged", false);
+              store.dispatch("setUsername", null);
               next();
             }
           })
           .catch(() => {
             location.href = location.origin + "/error?from=" + location.pathname;
           });
-    } else if(store.state.username === null && store.state.logged === false){
-      createLocalAccount();
     } else next();
   }
 }
