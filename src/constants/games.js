@@ -36,7 +36,7 @@ export default [
      },
      {
          name: "DUCKTAN",
-         url: "/ducktan",
+         url: "/comingsoon",
          image: require("@/assets/gamesImages/DUCKTAN_background.png"),
          title: require("@/assets/gamesImages/DUCKTAN_title.png"),
          preview: require("@/assets/gamesImages/DUCKTAN_preview.png"),
@@ -47,7 +47,7 @@ export default [
       },
      {
          name: "DUBBLOCK",
-         url: "/dubblock",
+         url: "/comingsoon",
          image: require("@/assets/gamesImages/COMINGSOON_background.png"),
          title: require("@/assets/gamesImages/DUBBLOCK_title.png"),
          preview: require("@/assets/gamesImages/COMINGSOON_video.gif"),
